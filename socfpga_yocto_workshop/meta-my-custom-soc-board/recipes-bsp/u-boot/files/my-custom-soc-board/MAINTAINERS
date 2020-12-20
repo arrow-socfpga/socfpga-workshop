@@ -1,0 +1,5 @@
+MY-CUSTOM-SOC-BOARD
+M:	Steven Kravatsky <skravatsky@arrow.com>
+S:	Maintained
+F:	include/configs/socfpga_my_custom_soc_board.h
+F:	configs/socfpga_my_custom_soc_board_defconfig
