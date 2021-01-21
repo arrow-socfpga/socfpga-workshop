@@ -16,6 +16,7 @@ INSANE_SKIP_${PN} = "ldflags"
 
 do_install () {
 	install -d ${D}/images/${MACHINE}/
+	install -d ${DEPLOY_DIR}/images/${MACHINE}/
 	install -m 0777 ${WORKDIR}/soc_system.rbf ${D}/images/${MACHINE}/
 	cp ${WORKDIR}/soc_system.rbf ${DEPLOY_DIR}/images/${MACHINE}/
 }
