@@ -1,0 +1,120 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst datastormdaq_ghrd.fpga_only_master.b2p -pg 1
+preplace inst datastormdaq_ghrd.f2sdram_only_master.p2b -pg 1
+preplace inst datastormdaq_ghrd.led_pio -pg 1 -lvl 2 -y 760
+preplace inst datastormdaq_ghrd.f2sdram_only_master.b2p_adapter -pg 1
+preplace inst datastormdaq_ghrd.ILC -pg 1 -lvl 2 -y 570
+preplace inst datastormdaq_ghrd.hps_0.f2s_periph_ref_clk -pg 1
+preplace inst datastormdaq_ghrd.in_system_sources_probes_0 -pg 1 -lvl 2 -y 900
+preplace inst datastormdaq_ghrd.hps_0.bridges -pg 1
+preplace inst datastormdaq_ghrd.clk_0 -pg 1 -lvl 1 -y 800
+preplace inst datastormdaq_ghrd.f2sdram_only_master.p2b_adapter -pg 1
+preplace inst datastormdaq_ghrd.f2sdram_only_master.timing_adt -pg 1
+preplace inst datastormdaq_ghrd.fpga_only_master.transacto -pg 1
+preplace inst datastormdaq_ghrd.hps_0.gmac0 -pg 1
+preplace inst datastormdaq_ghrd.hps_0.sdrctl -pg 1
+preplace inst datastormdaq_ghrd.hps_0.gmac1 -pg 1
+preplace inst datastormdaq_ghrd.fpga_only_master.timing_adt -pg 1
+preplace inst datastormdaq_ghrd.sysid_qsys -pg 1 -lvl 3 -y 880
+preplace inst datastormdaq_ghrd.hps_only_master.transacto -pg 1
+preplace inst datastormdaq_ghrd.fpga_only_master.clk_rst -pg 1
+preplace inst datastormdaq_ghrd.hps_0.fpgamgr -pg 1
+preplace inst datastormdaq_ghrd.fpga_only_master.p2b_adapter -pg 1
+preplace inst datastormdaq_ghrd.hps_0.clkmgr -pg 1
+preplace inst datastormdaq_ghrd.hps_0.fpga_interfaces -pg 1
+preplace inst datastormdaq_ghrd.f2sdram_only_master.fifo -pg 1
+preplace inst datastormdaq_ghrd.hps_0.l3regs -pg 1
+preplace inst datastormdaq_ghrd.fpga_only_master.fifo -pg 1
+preplace inst datastormdaq_ghrd.hps_0.f2s_sdram_ref_clk -pg 1
+preplace inst datastormdaq_ghrd.fpga_only_master.p2b -pg 1
+preplace inst datastormdaq_ghrd.hps_0.hps_io.border -pg 1
+preplace inst datastormdaq_ghrd.hps_only_master.b2p_adapter -pg 1
+preplace inst datastormdaq_ghrd.hps_0.rstmgr -pg 1
+preplace inst datastormdaq_ghrd.hps_only_master.p2b_adapter -pg 1
+preplace inst datastormdaq_ghrd.hps_only_master.p2b -pg 1
+preplace inst datastormdaq_ghrd.hps_0.usb0 -pg 1
+preplace inst datastormdaq_ghrd -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst datastormdaq_ghrd.f2sdram_only_master.clk_src -pg 1
+preplace inst datastormdaq_ghrd.hps_0.timer -pg 1
+preplace inst datastormdaq_ghrd.hps_0.usb1 -pg 1
+preplace inst datastormdaq_ghrd.hps_0 -pg 1 -lvl 3 -y 310
+preplace inst datastormdaq_ghrd.hps_only_master -pg 1 -lvl 2 -y 220
+preplace inst datastormdaq_ghrd.hps_0.spim0 -pg 1
+preplace inst datastormdaq_ghrd.intr_capturer_0 -pg 1 -lvl 3 -y 620
+preplace inst datastormdaq_ghrd.hps_0.spim1 -pg 1
+preplace inst datastormdaq_ghrd.button_pio -pg 1 -lvl 3 -y 30
+preplace inst datastormdaq_ghrd.hps_only_master.jtag_phy_embedded_in_jtag_master -pg 1
+preplace inst datastormdaq_ghrd.hps_0.uart0 -pg 1
+preplace inst datastormdaq_ghrd.hps_0.hps_io -pg 1
+preplace inst datastormdaq_ghrd.hps_0.sysmgr -pg 1
+preplace inst datastormdaq_ghrd.hps_0.uart1 -pg 1
+preplace inst datastormdaq_ghrd.hps_0.wd_timer0 -pg 1
+preplace inst datastormdaq_ghrd.hps_0.arm_a9_0 -pg 1
+preplace inst datastormdaq_ghrd.hps_0.wd_timer1 -pg 1
+preplace inst datastormdaq_ghrd.hps_0.i2c0 -pg 1
+preplace inst datastormdaq_ghrd.hps_0.timer0 -pg 1
+preplace inst datastormdaq_ghrd.hps_0.arm_a9_1 -pg 1
+preplace inst datastormdaq_ghrd.hps_0.i2c1 -pg 1
+preplace inst datastormdaq_ghrd.fpga_only_master.clk_src -pg 1
+preplace inst datastormdaq_ghrd.hps_0.scu -pg 1
+preplace inst datastormdaq_ghrd.hps_0.timer1 -pg 1
+preplace inst datastormdaq_ghrd.hps_0.i2c2 -pg 1
+preplace inst datastormdaq_ghrd.hps_0.clk_0 -pg 1
+preplace inst datastormdaq_ghrd.hps_0.i2c3 -pg 1
+preplace inst datastormdaq_ghrd.fpga_only_master.b2p_adapter -pg 1
+preplace inst datastormdaq_ghrd.hps_0.L2 -pg 1
+preplace inst datastormdaq_ghrd.f2sdram_only_master.transacto -pg 1
+preplace inst datastormdaq_ghrd.hps_0.timer2 -pg 1
+preplace inst datastormdaq_ghrd.fpga_only_master -pg 1 -lvl 2 -y 680
+preplace inst datastormdaq_ghrd.hps_0.timer3 -pg 1
+preplace inst datastormdaq_ghrd.hps_only_master.fifo -pg 1
+preplace inst datastormdaq_ghrd.hps_0.sdmmc -pg 1
+preplace inst datastormdaq_ghrd.hps_0.eosc1 -pg 1
+preplace inst datastormdaq_ghrd.hps_only_master.b2p -pg 1
+preplace inst datastormdaq_ghrd.hps_only_master.clk_src -pg 1
+preplace inst datastormdaq_ghrd.hps_0.dcan0 -pg 1
+preplace inst datastormdaq_ghrd.hps_0.eosc2 -pg 1
+preplace inst datastormdaq_ghrd.jtag_uart -pg 1 -lvl 3 -y 700
+preplace inst datastormdaq_ghrd.hps_0.dcan1 -pg 1
+preplace inst datastormdaq_ghrd.f2sdram_only_master -pg 1 -lvl 2 -y 320
+preplace inst datastormdaq_ghrd.hps_only_master.timing_adt -pg 1
+preplace inst datastormdaq_ghrd.hps_0.axi_sdram -pg 1
+preplace inst datastormdaq_ghrd.hps_0.axi_ocram -pg 1
+preplace inst datastormdaq_ghrd.fpga_only_master.jtag_phy_embedded_in_jtag_master -pg 1
+preplace inst datastormdaq_ghrd.mm_bridge_0 -pg 1 -lvl 2 -y 90
+preplace inst datastormdaq_ghrd.hps_0.nand0 -pg 1
+preplace inst datastormdaq_ghrd.f2sdram_only_master.b2p -pg 1
+preplace inst datastormdaq_ghrd.hps_0.arm_gic_0 -pg 1
+preplace inst datastormdaq_ghrd.hps_0.dma -pg 1
+preplace inst datastormdaq_ghrd.f2sdram_only_master.jtag_phy_embedded_in_jtag_master -pg 1
+preplace inst datastormdaq_ghrd.f2sdram_only_master.clk_rst -pg 1
+preplace inst datastormdaq_ghrd.hps_0.gpio0 -pg 1
+preplace inst datastormdaq_ghrd.dipsw_pio -pg 1 -lvl 3 -y 150
+preplace inst datastormdaq_ghrd.hps_0.qspi -pg 1
+preplace inst datastormdaq_ghrd.hps_0.gpio1 -pg 1
+preplace inst datastormdaq_ghrd.hps_only_master.clk_rst -pg 1
+preplace inst datastormdaq_ghrd.hps_0.gpio2 -pg 1
+preplace inst datastormdaq_ghrd.onchip_memory2_0 -pg 1 -lvl 3 -y 800
+preplace netloc EXPORT<net_container>datastormdaq_ghrd</net_container>(SLAVE)hps_0.f2h_debug_reset_req,(SLAVE)datastormdaq_ghrd.hps_0_f2h_debug_reset_req) 1 0 3 NJ 420 NJ 420 NJ
+preplace netloc EXPORT<net_container>datastormdaq_ghrd</net_container>(SLAVE)datastormdaq_ghrd.dipsw_pio_external_connection,(SLAVE)dipsw_pio.external_connection) 1 0 3 NJ 80 NJ 80 NJ
+preplace netloc EXPORT<net_container>datastormdaq_ghrd</net_container>(SLAVE)datastormdaq_ghrd.memory,(SLAVE)hps_0.memory) 1 0 3 NJ 540 NJ 540 NJ
+preplace netloc EXPORT<net_container>datastormdaq_ghrd</net_container>(MASTER)datastormdaq_ghrd.hps_0_h2f_reset,(MASTER)hps_0.h2f_reset) 1 3 1 N
+preplace netloc POINT_TO_POINT<net_container>datastormdaq_ghrd</net_container>(SLAVE)hps_0.f2h_sdram0_data,(MASTER)f2sdram_only_master.master) 1 2 1 710
+preplace netloc POINT_TO_POINT<net_container>datastormdaq_ghrd</net_container>(SLAVE)hps_0.f2h_axi_slave,(MASTER)hps_only_master.master) 1 2 1 730
+preplace netloc FAN_OUT<net_container>datastormdaq_ghrd</net_container>(SLAVE)in_system_sources_probes_0.source_clk,(SLAVE)f2sdram_only_master.clk,(SLAVE)jtag_uart.clk,(SLAVE)hps_0.f2h_axi_clock,(SLAVE)hps_only_master.clk,(SLAVE)hps_0.h2f_lw_axi_clock,(SLAVE)mm_bridge_0.clk,(SLAVE)button_pio.clk,(SLAVE)led_pio.clk,(SLAVE)hps_0.f2h_sdram0_clock,(SLAVE)onchip_memory2_0.clk1,(SLAVE)fpga_only_master.clk,(SLAVE)sysid_qsys.clk,(SLAVE)intr_capturer_0.clock,(SLAVE)ILC.clk,(SLAVE)dipsw_pio.clk,(MASTER)clk_0.clk,(SLAVE)hps_0.h2f_axi_clock) 1 1 2 410 890 830
+preplace netloc EXPORT<net_container>datastormdaq_ghrd</net_container>(SLAVE)clk_0.clk_in_reset,(SLAVE)datastormdaq_ghrd.reset) 1 0 1 NJ
+preplace netloc POINT_TO_POINT<net_container>datastormdaq_ghrd</net_container>(SLAVE)mm_bridge_0.s0,(MASTER)hps_0.h2f_lw_axi_master) 1 1 3 450 560 NJ 590 1180
+preplace netloc EXPORT<net_container>datastormdaq_ghrd</net_container>(SLAVE)hps_0.f2h_cold_reset_req,(SLAVE)datastormdaq_ghrd.hps_0_f2h_cold_reset_req) 1 0 3 NJ 400 NJ 400 NJ
+preplace netloc INTERCONNECT<net_container>datastormdaq_ghrd</net_container>(SLAVE)dipsw_pio.s1,(SLAVE)ILC.avalon_slave,(SLAVE)sysid_qsys.control_slave,(SLAVE)led_pio.s1,(SLAVE)jtag_uart.avalon_jtag_slave,(SLAVE)button_pio.s1,(MASTER)mm_bridge_0.m0,(MASTER)fpga_only_master.master,(SLAVE)onchip_memory2_0.s1,(SLAVE)intr_capturer_0.avalon_slave_0) 1 1 2 450 870 850
+preplace netloc EXPORT<net_container>datastormdaq_ghrd</net_container>(SLAVE)led_pio.external_connection,(SLAVE)datastormdaq_ghrd.led_pio_external_connection) 1 0 2 NJ 790 NJ
+preplace netloc EXPORT<net_container>datastormdaq_ghrd</net_container>(SLAVE)datastormdaq_ghrd.hps_0_hps_io,(SLAVE)hps_0.hps_io) 1 0 3 NJ 480 NJ 480 NJ
+preplace netloc EXPORT<net_container>datastormdaq_ghrd</net_container>(SLAVE)hps_0.f2h_warm_reset_req,(SLAVE)datastormdaq_ghrd.hps_0_f2h_warm_reset_req) 1 0 3 NJ 460 NJ 460 NJ
+preplace netloc EXPORT<net_container>datastormdaq_ghrd</net_container>(SLAVE)datastormdaq_ghrd.hps_0_f2h_stm_hw_events,(SLAVE)hps_0.f2h_stm_hw_events) 1 0 3 NJ 440 NJ 440 NJ
+preplace netloc EXPORT<net_container>datastormdaq_ghrd</net_container>(SLAVE)datastormdaq_ghrd.clk,(SLAVE)clk_0.clk_in) 1 0 1 NJ
+preplace netloc EXPORT<net_container>datastormdaq_ghrd</net_container>(SLAVE)button_pio.external_connection,(SLAVE)datastormdaq_ghrd.button_pio_external_connection) 1 0 3 NJ 60 NJ 60 NJ
+preplace netloc INTERCONNECT<net_container>datastormdaq_ghrd</net_container>(MASTER)ILC.irq,(SLAVE)dipsw_pio.irq,(SLAVE)jtag_uart.irq,(SLAVE)button_pio.irq,(MASTER)intr_capturer_0.interrupt_receiver,(MASTER)hps_0.f2h_irq0) 1 2 2 790 610 1200
+preplace netloc FAN_OUT<net_container>datastormdaq_ghrd</net_container>(SLAVE)intr_capturer_0.reset_sink,(SLAVE)led_pio.reset,(SLAVE)hps_only_master.clk_reset,(SLAVE)dipsw_pio.reset,(SLAVE)ILC.reset_n,(SLAVE)jtag_uart.reset,(SLAVE)mm_bridge_0.reset,(SLAVE)sysid_qsys.reset,(SLAVE)button_pio.reset,(SLAVE)fpga_only_master.clk_reset,(MASTER)clk_0.clk_reset,(SLAVE)f2sdram_only_master.clk_reset,(SLAVE)onchip_memory2_0.reset1) 1 1 2 430 180 750
+preplace netloc EXPORT<net_container>datastormdaq_ghrd</net_container>(SLAVE)datastormdaq_ghrd.issp_hps_resets,(SLAVE)in_system_sources_probes_0.sources) 1 0 2 NJ 930 NJ
+levelinfo -pg 1 0 200 1350
+levelinfo -hier datastormdaq_ghrd 210 240 530 990 1220
