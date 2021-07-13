@@ -70,7 +70,6 @@
 	rxdv-skew-ps = <420>;
 	rxc-skew-ps = <1680>;
 };
-};
 
 &gpio0 {	/* GPIO 0..29 */
 	status = "okay";
