@@ -383,11 +383,8 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to eth1_rx_d[3]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to eth1_mdc
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to eth1_mdio
 
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to link_st
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to rx_er
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to phy_int
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to eth_rst
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to phy_led1
 
 # qspi
 
@@ -429,106 +426,14 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to uart0_tx
 
 # i2c
 
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to fmc_scl
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to fmc_sda
-
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hps_sda
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hps_scl
 
-# vga
-
-set_location_assignment PIN_AH30  -to hdmi_clk
-set_location_assignment PIN_W24   -to hdmi_de
-set_location_assignment PIN_AD25  -to hdmi_hsync
-set_location_assignment PIN_AB22  -to hdmi_vsync
-
-set_location_assignment PIN_AE26  -to hdmi_data[0]
-set_location_assignment PIN_W22   -to hdmi_data[1]
-set_location_assignment PIN_AE27  -to hdmi_data[2]
-set_location_assignment PIN_AA25  -to hdmi_data[3]
-set_location_assignment PIN_AG27  -to hdmi_data[4]
-set_location_assignment PIN_AB26  -to hdmi_data[5]
-set_location_assignment PIN_AH28  -to hdmi_data[6]
-set_location_assignment PIN_AC27  -to hdmi_data[7]
-set_location_assignment PIN_AJ29  -to hdmi_data[8]
-set_location_assignment PIN_AD27  -to hdmi_data[9]
-set_location_assignment PIN_AH29  -to hdmi_data[10]
-set_location_assignment PIN_AD26  -to hdmi_data[11]
-set_location_assignment PIN_AG28  -to hdmi_data[12]
-set_location_assignment PIN_AE28  -to hdmi_data[13]
-set_location_assignment PIN_AG30  -to hdmi_data[14]
-set_location_assignment PIN_W20   -to hdmi_data[15]
-set_location_assignment PIN_AF29  -to hdmi_data[16]
-set_location_assignment PIN_AF30  -to hdmi_data[17]
-set_location_assignment PIN_AA24  -to hdmi_data[18]
-set_location_assignment PIN_AA28  -to hdmi_data[19]
-set_location_assignment PIN_Y24   -to hdmi_data[20]
-set_location_assignment PIN_W21   -to hdmi_data[21]
-set_location_assignment PIN_W25   -to hdmi_data[22]
-set_location_assignment PIN_V23   -to hdmi_data[23]
-
-set_location_assignment PIN_AF28  -to hdmi_spdif
-set_location_assignment PIN_AB25  -to hdmi_spdifout
-set_location_assignment PIN_AC25  -to hdmi_int
-set_location_assignment PIN_Y21   -to ct_hpd
-set_location_assignment PIN_AB23  -to ls_oe
-set_location_assignment PIN_Y23   -to cec_clk
-
-# add pullup values for i2c sda, scl
-
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hdmi_clk
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hdmi_de
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hdmi_hsync
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hdmi_vsync
-
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hdmi_data[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hdmi_data[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hdmi_data[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hdmi_data[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hdmi_data[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hdmi_data[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hdmi_data[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hdmi_data[7]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hdmi_data[8]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hdmi_data[9]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hdmi_data[10]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hdmi_data[11]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hdmi_data[12]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hdmi_data[13]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hdmi_data[14]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hdmi_data[15]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hdmi_data[16]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hdmi_data[17]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hdmi_data[18]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hdmi_data[19]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hdmi_data[20]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hdmi_data[21]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hdmi_data[22]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hdmi_data[23]
-
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hdmi_spdif
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hdmi_spdifout
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hdmi_int
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ct_hpd
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ls_oe
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to cec_clk
-
 # misc
 
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fmc_pg_c2m
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fmc_prsnt_m2c
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to usb1_rst
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to cpu_gpio_0
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to cpu_gpio_1
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to led_hps_1
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to led_hps_2
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to therm_n
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to therm_n
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to alert_n
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to user_btn_hps
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to status
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to as_rst
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to qspi_rst
 
 # user pb, dipsw, leds
 
