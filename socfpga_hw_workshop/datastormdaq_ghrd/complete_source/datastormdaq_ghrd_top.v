@@ -2,12 +2,6 @@
 // Copyright (c) 2013 by Arrow Electronics, Inc.
 // ============================================================================
 //
-// Permission:
-//
-//   Arrow grants permission to use and modify this code for use
-//   in synthesis for all Arrow Development Boards. Other use of this code, 
-//	  including the selling ,duplication, or modification of any portion is 
-//   strictly prohibited.
 //
 // Disclaimer:
 //
@@ -28,94 +22,10 @@
 //                     
 //
 // ============================================================================
-// Date:  Mon Mar 27 13:20:22 2013
+// Date:  Mon Aug 24:20:22 2021
 // ============================================================================
 //
-// ============================================================================
-// Revision Change list:
-// ============================================================================
-//
-// 								soc_system_20130323
-//	
-//	Description: Connected hps_fpga_reset_n output to verilog top level reset.
-//					 Added button debounce circuitry. Bypassed at present. Debug required.
-//					 Used clk_bot1. clk_50m_fpga does not work. Debug required.
-//
-//
-// 								soc_system_20130408
-//
-//	Description: Changed vga_sync_n & vga_blank_n from inputs to outputs
-//					 Changed ddr3_fpga_rasn, ddr3_fpga_resetn, ddr3_fpga_wen from 
-//					 inputs to outputs.
-//
-//
-// 								soc_system_20130411
-//
-//	Description: Removed debounce circuit. External 74HC245 performs pushbutton 
-//					 debounce.
-//
-//
-// 								soc_system_20131109
-//
-//	Description: Upgrade to release 13.1 
-//					 Quartus: Changed top level to ghrd_top
-//					 Quartus: Added Source/Probe Megawizard instances for f2h cold/warm/debug resets
-//					 Quartus: Added system trace connections
-//					 Qsys: Changed naming for jtag_master from master_secure to hps_only_master
-//					 Qsys: Changed naming for jtag_master from master_non_sec to fpga_only_master
-//					 Qsys: hps_component. Enabled input ports for f2h cold/warm/debug resets
-//					 Qsys: hps_component. Enabled system trace ports
-//
-//
-// 								soc_system_20140711
-//
-//	Description: Upgrade to release 14.0 
-//					 Quartus: Changed device to 5CSXFC6D6F31C6
-//					 Qsys: hps_component. Enabled f2dram_0, 256 bit bidirectional Avalon-MM FPGA to SDRAM interface
-//					 Qsys: Added f2sdram_only jtag_master
-//
-//
-// 								soc_system_20141225
-//
-//	Description: Upgrade to release 14.1 
-//					 Quartus: 
-//					 Qsys: Added a mm_bridge between the lw_axi_master and all fpga peripherals
-//					 Qsys: hps_component / hps_clocks_tab. qspi clock freq changed to 333MHz 
-//							 from 400MHz
-//					 Qsys: hps_component / hps_clocks_tab. configuration / hps to fpga user 0 
-//							 clock frequency changed to 123.333333MHz from 100MHz
-//
-//
-// 								soc_system_20150901
-//
-//	Description: Upgrade to release 15.0 
-//					 Quartus: 
-//					 Qsys: 
-//
-//
-// 								soc_system_20160212
-//
-//	Description: Upgrade to release 15.1 
-//					 Quartus: 
-//					 Qsys: 
-//
-// 								soc_system_20161011
-//
-//	Description: Upgrade to release 16.0 
-//					 Quartus: 
-//					 Qsys: Added  the Altera Interrupt Latency Counter component
 
-// 								soc_system_20170311
-//
-//	Description: Upgrade to release 16.1 
-//					 Quartus: removed source/probe megawizard instance
-//					 Qsys: Added source/probe component
-
-// 								sockit_ghrd_20201109
-//
-//	Description: Upgrade to release 20.1 
-//					 Quartus: 
-//					 Platform Designer:
 
 //
 // ============================================================================
@@ -189,7 +99,7 @@ module datastormdaq_ghrd_top (
   input  wire           usb1_dir,
   input  wire           usb1_nxt,
   inout  wire  [  7:0]  usb1_d,
-  inout	wire           usb1_rst,
+  inout	wire            usb1_rst,
 
   // hps-uart
   input  wire           uart0_rx,
@@ -202,7 +112,7 @@ module datastormdaq_ghrd_top (
   // user led, pb, dipsw
   input	wire [1:0]   	user_dipsw_fpga,     
   output wire [1:0]   	user_led_fpga,
-  input	wire           user_pb_fpga,  
+  input	wire            user_pb_fpga,  
 
   // fmc interface
 
@@ -247,12 +157,12 @@ module datastormdaq_ghrd_top (
         .button_pio_external_connection_export (user_pb_fpga), 
         .dipsw_pio_external_connection_export  (user_dipsw_fpga), 
         .led_pio_external_connection_export    (fpga_led_internal),
-        .hps_0_f2h_cold_reset_req_reset_n      (~hps_reset_req[0]),      //       hps_0_f2h_cold_reset_req.reset_n
-        .hps_0_f2h_debug_reset_req_reset_n     (~hps_reset_req[2]),     //      hps_0_f2h_debug_reset_req.reset_n
-        .hps_0_f2h_stm_hw_events_stm_hwevents  (stm_hw_events),  //        hps_0_f2h_stm_hw_events.stm_hwevents
-        .hps_0_f2h_warm_reset_req_reset_n      (~hps_reset_req[1]),      //       hps_0_f2h_warm_reset_req.reset_n
-        .hps_0_h2f_reset_reset_n               (hps_fpga_reset_n),               //                hps_0_h2f_reset.reset_n
-        .issp_hps_resets_source                (hps_reset_req),                //   issp_hps_resets.source
+        .hps_0_f2h_cold_reset_req_reset_n      (~hps_reset_req[0]),      
+        .hps_0_f2h_debug_reset_req_reset_n     (~hps_reset_req[2]),     
+        .hps_0_f2h_stm_hw_events_stm_hwevents  (stm_hw_events),  
+        .hps_0_f2h_warm_reset_req_reset_n      (~hps_reset_req[1]),      
+        .hps_0_h2f_reset_reset_n               (hps_fpga_reset_n),               
+        .issp_hps_resets_source                (hps_reset_req),                
         .hps_0_hps_io_hps_io_emac1_inst_TX_CLK (eth1_tx_clk),
         .hps_0_hps_io_hps_io_emac1_inst_TXD0 (eth1_tx_d[0]),
         .hps_0_hps_io_hps_io_emac1_inst_TXD1 (eth1_tx_d[1]),

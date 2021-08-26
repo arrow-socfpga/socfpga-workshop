@@ -1,13 +1,7 @@
 // ============================================================================
-// Copyright (c) 2013 by Arrow Electronics, Inc.
+// Copyright (c) 2021 by Arrow Electronics, Inc.
 // ============================================================================
 //
-// Permission:
-//
-//   Arrow grants permission to use and modify this code for use
-//   in synthesis for all Arrow Development Boards. Other use of this code, 
-//	  including the selling ,duplication, or modification of any portion is 
-//   strictly prohibited.
 //
 // Disclaimer:
 //
@@ -28,111 +22,9 @@
 //                     
 //
 // ============================================================================
-// Date:  Mon Mar 27 13:20:22 2013
+// Date:  Mon Aug 24 13:20:22 2021
 // ============================================================================
-//
-// ============================================================================
-// Revision Change list:
-// ============================================================================
-//
-// 								soc_system_20130323
-//	
-//	Description: Connected hps_fpga_reset_n output to verilog top level reset.
-//					 Added button debounce circuitry. Bypassed at present. Debug required.
-//					 Used clk_bot1. clk_50m_fpga does not work. Debug required.
-//
-//
-// 								soc_system_20130408
-//
-//	Description: Changed vga_sync_n & vga_blank_n from inputs to outputs
-//					 Changed ddr3_fpga_rasn, ddr3_fpga_resetn, ddr3_fpga_wen from 
-//					 inputs to outputs.
-//
-//
-// 								soc_system_20130411
-//
-//	Description: Removed debounce circuit. External 74HC245 performs pushbutton 
-//					 debounce.
-//
-//
-// 								soc_system_20131109
-//
-//	Description: Upgrade to release 13.1 
-//					 Quartus: Changed top level to ghrd_top
-//					 Quartus: Added Source/Probe Megawizard instances for f2h cold/warm/debug resets
-//					 Quartus: Added system trace connections
-//					 Qsys: Changed naming for jtag_master from master_secure to hps_only_master
-//					 Qsys: Changed naming for jtag_master from master_non_sec to fpga_only_master
-//					 Qsys: hps_component. Enabled input ports for f2h cold/warm/debug resets
-//					 Qsys: hps_component. Enabled system trace ports
-//
-//
-// 								soc_system_20140711
-//
-//	Description: Upgrade to release 14.0 
-//					 Quartus: Changed device to 5CSXFC6D6F31C6
-//					 Qsys: hps_component. Enabled f2dram_0, 256 bit bidirectional Avalon-MM FPGA to SDRAM interface
-//					 Qsys: Added f2sdram_only jtag_master
-//
-//
-// 								soc_system_20141225
-//
-//	Description: Upgrade to release 14.1 
-//					 Quartus: 
-//					 Qsys: Added a mm_bridge between the lw_axi_master and all fpga peripherals
-//					 Qsys: hps_component / hps_clocks_tab. qspi clock freq changed to 333MHz 
-//							 from 400MHz
-//					 Qsys: hps_component / hps_clocks_tab. configuration / hps to fpga user 0 
-//							 clock frequency changed to 123.333333MHz from 100MHz
-//
-//
-// 								soc_system_20150901
-//
-//	Description: Upgrade to release 15.0 
-//					 Quartus: 
-//					 Qsys: 
-//
-//
-// 								soc_system_20160212
-//
-//	Description: Upgrade to release 15.1 
-//					 Quartus: 
-//					 Qsys: 
-//
-// 								soc_system_20161011
-//
-//	Description: Upgrade to release 16.0 
-//					 Quartus: 
-//					 Qsys: Added  the Altera Interrupt Latency Counter component
 
-// 								soc_system_20170311
-//
-//	Description: Upgrade to release 16.1 
-//					 Quartus: removed source/probe megawizard instance
-//					 Qsys: Added source/probe component
-
-// 								sockit_ghrd_20201109
-//
-//	Description: Upgrade to release 20.1 
-//					 Quartus: 
-//					 Platform Designer:
-
-//
-// ============================================================================
-// Qsys System :
-// ============================================================================
-//
-// Description: 
-//
-//		To view the Qsys system open Qsys and selected soc_system.qsys.
-//		This system mimics the Altera Development kit GHRD design. The system
-//		console script, "ghrd_sc_script.tcl", which can be found in this projects  
-//		root directory, is identical to the Altera script and will implement all 
-//		the functionality described in the GHRD Users Guide. All software examples 
-//		shown in the users guide will also be fully functional on the Arrow SoCKIT.
-//
-//
-// ============================================================================
 
 module sockit_ghrd_top (
 
@@ -213,14 +105,7 @@ module sockit_ghrd_top (
    inout  wire        hps_gpio_GPIO61,  
    inout  wire        hps_gpio_GPIO62,   
 
-
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////	 
-////////////////////		FPGA Interface			////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////								
+							
 	
 	//FPGA-GPLL-CLK------------------------//X pins
    input              clk_100m_fpga,       // 2.5V    //50 MHz ajustable from SiLabs SI5338
@@ -255,11 +140,8 @@ module sockit_ghrd_top (
 // connection of internal logics
 //  assign user_led_fpga = ~fpga_led_internal;
   assign user_led_fpga = fpga_led_internal;
-  assign stm_hw_events    = {{18{1'b0}}, user_dipsw_fpga, fpga_led_internal, user_pb_fpga};
+  assign stm_hw_events    = {{16{1'b0}}, user_dipsw_fpga, fpga_led_internal, user_pb_fpga};
   
-	 
-
-	 
  
     sockit_ghrd u0 (
         .clk_clk                               (clk_bot1),                          	 
