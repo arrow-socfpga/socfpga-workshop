@@ -1,5 +1,5 @@
 // ============================================================================
-// Copyright (c) 2013 by Arrow Electronics, Inc.
+// Copyright (c) 2021 by Arrow Electronics, Inc.
 // ============================================================================
 //
 //
@@ -24,25 +24,7 @@
 // ============================================================================
 // Date:  Mon Aug 24:20:22 2021
 // ============================================================================
-//
 
-
-//
-// ============================================================================
-// Qsys System :
-// ============================================================================
-//
-// Description: 
-//
-//		To view the Qsys system open Qsys and selected soc_system.qsys.
-//		This system mimics the Altera Development kit GHRD design. The system
-//		console script, "ghrd_sc_script.tcl", which can be found in this projects  
-//		root directory, is identical to the Altera script and will implement all 
-//		the functionality described in the GHRD Users Guide. All software examples 
-//		shown in the users guide will also be fully functional on the Arrow DataStorm DAQ.
-//
-//
-// ============================================================================
 
 module datastormdaq_ghrd_top (
 
@@ -77,11 +59,8 @@ module datastormdaq_ghrd_top (
   input  wire  [  3:0]  eth1_rx_d,
   output wire           eth1_mdc,
   inout  wire           eth1_mdio,
-  inout  wire           link_st,
-  inout  wire           rx_er,
   inout  wire           phy_int,
   inout  wire           eth_rst,
-  inout  wire           phy_led1,
   
   // hps-qspi
   output wire           qspi_ss0,
@@ -114,24 +93,10 @@ module datastormdaq_ghrd_top (
   output wire [1:0]   	user_led_fpga,
   input	wire            user_pb_fpga,  
 
-  // fmc interface
-
-  inout  wire           fmc_scl,
-  inout  wire           fmc_sda,
-
   // misc
-  inout  wire           fmc_pg_c2m,
-  inout  wire           fmc_prsnt_m2c,
-  inout  wire           cpu_gpio_0,
-  inout  wire           cpu_gpio_1,
+
   inout  wire           led_hps_1,
   inout  wire           led_hps_2,
-  inout  wire           therm_n,
-  inout  wire           alert_n,
-  inout  wire           user_btn_hps,
-  inout  wire           status,
-  inout  wire           as_rst,
-  inout  wire           qspi_rst,
   input  wire           fpga_resetn         // 2.5V    //FPGA Reset Pushbutton	(S4)
 
    
@@ -203,28 +168,13 @@ module datastormdaq_ghrd_top (
         .hps_0_hps_io_hps_io_usb1_inst_NXT (usb1_nxt),
         .hps_0_hps_io_hps_io_uart0_inst_RX     (uart0_rx),
         .hps_0_hps_io_hps_io_uart0_inst_TX     (uart0_tx),
-	.hps_0_hps_io_hps_io_i2c0_inst_SDA   (fmc_sda),
-	.hps_0_hps_io_hps_io_i2c0_inst_SCL   (fmc_scl),
 	.hps_0_hps_io_hps_io_i2c1_inst_SDA   (hps_sda),
 	.hps_0_hps_io_hps_io_i2c1_inst_SCL   (hps_scl),	
-        .hps_0_hps_io_hps_io_gpio_inst_GPIO00 (link_st),
-        .hps_0_hps_io_hps_io_gpio_inst_GPIO09 (rx_er),
         .hps_0_hps_io_hps_io_gpio_inst_GPIO35 (phy_int),
-        .hps_0_hps_io_hps_io_gpio_inst_GPIO40 (fmc_pg_c2m),
-        .hps_0_hps_io_hps_io_gpio_inst_GPIO41 (fmc_prsnt_m2c),
         .hps_0_hps_io_hps_io_gpio_inst_GPIO42 (usb1_rst),
         .hps_0_hps_io_hps_io_gpio_inst_GPIO43 (eth_rst),
-        .hps_0_hps_io_hps_io_gpio_inst_GPIO44 (phy_led1),
-        .hps_0_hps_io_hps_io_gpio_inst_GPIO48 (cpu_gpio_0),
         .hps_0_hps_io_hps_io_gpio_inst_GPIO53 (led_hps_1),
         .hps_0_hps_io_hps_io_gpio_inst_GPIO54 (led_hps_2),
-        .hps_0_hps_io_hps_io_gpio_inst_GPIO55 (therm_n),
-        .hps_0_hps_io_hps_io_gpio_inst_GPIO56 (alert_n),
-        .hps_0_hps_io_hps_io_gpio_inst_GPIO57 (user_btn_hps),
-        .hps_0_hps_io_hps_io_gpio_inst_GPIO58 (cpu_gpio_1),
-        .hps_0_hps_io_hps_io_gpio_inst_GPIO59 (status),
-        .hps_0_hps_io_hps_io_gpio_inst_GPIO61 (as_rst),
-        .hps_0_hps_io_hps_io_gpio_inst_GPIO65 (qspi_rst),
         .memory_mem_a                          (ddr3_a),                          
         .memory_mem_ba                         (ddr3_ba),                         
         .memory_mem_ck                         (ddr3_ck_p),                         
