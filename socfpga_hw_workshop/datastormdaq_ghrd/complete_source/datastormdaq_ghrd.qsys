@@ -576,7 +576,7 @@
   <parameter name="FPGA_PERIPHERAL_OUTPUT_CLOCK_FREQ_SDIO_CCLK" value="100" />
   <parameter name="FPGA_PERIPHERAL_OUTPUT_CLOCK_FREQ_SPIM0_SCLK_OUT" value="100" />
   <parameter name="FPGA_PERIPHERAL_OUTPUT_CLOCK_FREQ_SPIM1_SCLK_OUT" value="100" />
-  <parameter name="GPIO_Enable">Yes,No,No,No,No,No,No,No,No,Yes,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,Yes,No,No,No,No,Yes,Yes,Yes,Yes,Yes,No,No,No,Yes,No,No,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,No,No,No,Yes,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No</parameter>
+  <parameter name="GPIO_Enable">No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,Yes,No,No,No,No,No,No,Yes,Yes,No,No,No,No,No,No,No,No,No,Yes,Yes,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No,No</parameter>
   <parameter name="GP_Enable" value="false" />
   <parameter name="H2F_AXI_CLOCK_FREQ" value="50000000" />
   <parameter name="H2F_CTI_CLOCK_FREQ" value="100" />
@@ -590,8 +590,8 @@
   <parameter name="HHP_HPS_VERIFICATION" value="false" />
   <parameter name="HLGPI_Enable" value="false" />
   <parameter name="HPS_PROTOCOL" value="DDR3" />
-  <parameter name="I2C0_Mode" value="I2C" />
-  <parameter name="I2C0_PinMuxing" value="HPS I/O Set 1" />
+  <parameter name="I2C0_Mode" value="N/A" />
+  <parameter name="I2C0_PinMuxing" value="Unused" />
   <parameter name="I2C1_Mode" value="I2C" />
   <parameter name="I2C1_PinMuxing" value="HPS I/O Set 0" />
   <parameter name="I2C2_Mode" value="N/A" />
