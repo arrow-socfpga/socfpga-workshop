@@ -94,8 +94,8 @@ module de10nano_ghrd_top (
 
 
   // misc
-  inout  wire           conv_usb
-  inout  wire           led_hps,
+  inout  wire           conv_usb,
+  inout  wire           led_hps
   
 );
     
@@ -165,8 +165,8 @@ module de10nano_ghrd_top (
         .hps_0_hps_io_hps_io_usb1_inst_NXT (usb1_nxt),
         .hps_0_hps_io_hps_io_uart0_inst_RX     (uart0_rx),
         .hps_0_hps_io_hps_io_uart0_inst_TX     (uart0_tx),
-	.hps_0_hps_io_hps_io_i2c1_inst_SDA   (hps_sda),
-	.hps_0_hps_io_hps_io_i2c1_inst_SCL   (hps_scl),	
+	.hps_0_hps_io_hps_io_i2c0_inst_SDA   (hps_sda),
+	.hps_0_hps_io_hps_io_i2c0_inst_SCL   (hps_scl),	
         .hps_0_hps_io_hps_io_gpio_inst_GPIO09 (conv_usb),
         .hps_0_hps_io_hps_io_gpio_inst_GPIO35 (eth_int),
         .hps_0_hps_io_hps_io_gpio_inst_GPIO53 (led_hps),
