@@ -21,7 +21,7 @@ SRC_URI_append_my-custom-soc-board +=	" \
 					file://my-custom-soc-board/qts/sdram_config.h \
            				"
 
-do_compile_prepend () {
+do_configure_prepend () {
         install -m 0644 ${THISDIR}/files/socfpga_my_custom_soc_board_defconfig ${S}/configs
         install -m 0644 ${THISDIR}/files/Kconfig ${S}/arch/arm/mach-socfpga/Kconfig
         install -m 0644 ${THISDIR}/files/socfpga_my_custom_soc_board.h ${S}/include/configs
