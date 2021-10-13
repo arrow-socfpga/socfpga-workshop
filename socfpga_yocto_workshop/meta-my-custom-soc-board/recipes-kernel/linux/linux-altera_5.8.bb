@@ -1,9 +1,11 @@
-LINUX_VERSION = "4.14.130"
-LINUX_VERSION_SUFFIX = "-ltsi"
+LINUX_VERSION = "5.8"
+LINUX_VERSION_SUFFIX = ""
 
-SRCREV = "cae629555019eb0d3f63d9e8e639a982e994e80f"
+SRCREV = "eb446787abdf0428c0057da2d88daabc39a32393"
 
 include linux-altera.inc
+
+LIC_FILES_CHKSUM = "file://COPYING;md5=6bc538ed5bd9a7fc9398086aedcd7e46"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/config:"
 

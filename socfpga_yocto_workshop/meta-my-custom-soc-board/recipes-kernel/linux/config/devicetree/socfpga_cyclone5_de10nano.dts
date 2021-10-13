@@ -50,9 +50,9 @@
 	};
 };
 
-&gmac1 {
+/*&gmac1 {
 	status = "okay";
-	phy-mode = "rgmii-id";
+	phy-mode = "rgmii";
 
 	rxd0-skew-ps = <420>;
 	rxd1-skew-ps = <420>;
@@ -62,6 +62,26 @@
 	txc-skew-ps = <1860>;
 	rxdv-skew-ps = <420>;
 	rxc-skew-ps = <1680>;
+};*/
+
+&gmac1 {
+	status = "okay";
+	phy-mode = "rgmii";
+
+	txd0-skew-ps = <0>; /* -420ps */
+	txd1-skew-ps = <0>; /* -420ps */
+	txd2-skew-ps = <0>; /* -420ps */
+	txd3-skew-ps = <0>; /* -420ps */
+	rxd0-skew-ps = <420>; /* 0ps */
+	rxd1-skew-ps = <420>; /* 0ps */
+	rxd2-skew-ps = <420>; /* 0ps */
+	rxd3-skew-ps = <420>; /* 0ps */
+	txen-skew-ps = <0>; /* -420ps */
+	txc-skew-ps = <1860>; /* 960ps */
+	rxdv-skew-ps = <420>; /* 0ps */
+	rxc-skew-ps = <1680>; /* 780ps */
+
+	max-frame-size = <3800>;
 };
 
 &mmc0 {

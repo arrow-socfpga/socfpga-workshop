@@ -5,13 +5,14 @@ SRC_URI_append_my-custom-soc-board += " \
 				file://devicetree/socfpga_cyclone5_my_custom_soc_board.dts \
 				file://devicetree/my_custom_soc_board_ghrd.h \
 				file://devicetree/my_custom_soc_board_fpga.dtsi \
-				file://socfpga-4.14-ltsi/cfg/altvipfb.cfg \
-				file://socfpga-4.14-ltsi/cfg/block.cfg \
-				file://socfpga-4.14-ltsi/cfg/cma.cfg \
-				file://socfpga-4.14-ltsi/cfg/configfs.cfg \
-				file://socfpga-4.14-ltsi/cfg/gpio-keys.cfg \
-				file://socfpga-4.14-ltsi/cfg/led-triggers.cfg \
-				file://socfpga-4.14-ltsi/cfg/usb-gadget.cfg \
+				file://socfpga-5.8/cfg/altvipfb.cfg \
+				file://socfpga-5.8/cfg/block.cfg \
+				file://socfpga-5.8/cfg/cma.cfg \
+				file://socfpga-5.8/cfg/configfs.cfg \
+				file://socfpga-5.8/cfg/gpio-keys.cfg \
+				file://socfpga-5.8/cfg/led-triggers.cfg \
+				file://socfpga-5.8/cfg/net_phy.cfg \
+				file://socfpga-5.8/cfg/usb-gadget.cfg \
 				"
 
 do_compile_prepend () {                                                            

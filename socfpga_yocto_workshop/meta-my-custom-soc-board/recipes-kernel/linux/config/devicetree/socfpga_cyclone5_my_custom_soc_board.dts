@@ -51,17 +51,17 @@
 };
 
 &gmac1 {
-	status = "okay";
-	phy-mode = "rgmii";
+	#address-cells = <1>;
+	#size-cells = <0>;
 
-	rxd0-skew-ps = <0>;
-	rxd1-skew-ps = <0>;
-	rxd2-skew-ps = <0>;
-	rxd3-skew-ps = <0>;
-	txen-skew-ps = <0>;
-	txc-skew-ps = <2600>;
-	rxdv-skew-ps = <0>;
-	rxc-skew-ps = <2000>;
+	status = "okay";
+	phy-mode = "rgmii-id";
+
+	ethernet-phy@1 {
+		reg = <1>;
+		adi,rx-internal-delay-ps = <2000>;
+		adi,tx-internal-delay-ps = <2000>;
+	};
 };
 
 &mmc0 {
