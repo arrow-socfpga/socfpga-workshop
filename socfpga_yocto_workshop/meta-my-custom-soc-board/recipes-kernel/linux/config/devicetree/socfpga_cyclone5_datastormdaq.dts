@@ -73,3 +73,18 @@
 &usb1 {
 	status = "okay";
 };
+
+leds {
+
+	compatible = "gpio-leds";
+
+	fpga0 {
+		label = "fpga_led0";
+		gpios = <&LED_PIO 0 1>;
+	};
+
+	fpga1 {
+		label = "fpga_led1";
+		gpios = <&LED_PIO 1 1>;
+	};
+};
