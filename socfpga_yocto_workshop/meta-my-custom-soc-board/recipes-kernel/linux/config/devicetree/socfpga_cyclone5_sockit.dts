@@ -74,27 +74,3 @@
 	status = "okay";
 };
 
-leds {
-
-	compatible = "gpio-leds";
-
-	fpga0 {
-		label = "fpga_led0";
-		gpios = <&LED_PIO 0 1>;
-	};
-
-	fpga1 {
-		label = "fpga_led1";
-		gpios = <&LED_PIO 1 1>;
-	};
-
-	fpga2 {
-		label = "fpga_led2";
-		gpios = <&LED_PIO 2 1>;
-	};
-
-	fpga3 {
-		label = "fpga_led3";
-		gpios = <&LED_PIO 3 1>;
-	};
-};
