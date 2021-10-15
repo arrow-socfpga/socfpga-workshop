@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(5CSEMA5F31) Path("/home/soceds/socfpga-workshop1/socfpga_hw_workshop/datastormdaq_ghrd/complete_source/output_files/") File("datastormdaq_ghrd_top.sof") MfrSpec(OpMask(1));
+		Device PartName(5CSEMA5F31) Path("/home/soceds/socfpga-workshop/socfpga_hw_workshop/datastormdaq_ghrd/output_files/") File("datastormdaq_ghrd_top.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
