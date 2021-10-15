@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(5CSXFC6D6F31) Path("C:/intel_trn/hdl/projects/arrow_ghrd/partial_source/output_files/") File("sockit_ghrd_top.sof") MfrSpec(OpMask(1));
+		Device PartName(5CSXFC6D6F31) Path("/home/soceds/socfpga-workshop/socfpga_hw_workshop/sockit_ghrd/output_files/") File("sockit_ghrd_top.sof") MfrSpec(OpMask(1));
 	P ActionCode(Ign)
 		Device PartName(SOCVHPS) MfrSpec(OpMask(0));
 
