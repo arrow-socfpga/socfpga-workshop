@@ -1,0 +1,140 @@
+// SPDX-License-Identifier: GPL-2.0+
+/*
+ * Copyright (C) 2013 Steffen Trumtrar <s.trumtrar@pengutronix.de>
+ */
+
+#include "socfpga_cyclone5.dtsi"
+
+/ {
+	model = "My Custom SoC Board";
+	compatible = "custom,socfpga-cyclone5-my-custom-soc-board", "altr,socfpga-cyclone5", "altr,socfpga";
+
+	chosen {
+		bootargs = "earlyprintk";
+		stdout-path = "serial0:115200n8";
+	};
+
+	memory {
+		name = "memory";
+		device_type = "memory";
+		reg = <0x0 0x40000000>; /* 1GB */
+	};
+
+	aliases {
+		/* this allow the ethaddr uboot environmnet variable contents
+		 * to be added to the gmac1 device tree blob.
+		 */
+		ethernet0 = &gmac1;
+	};
+
+	leds {
+		compatible = "gpio-leds";
+
+		hps_led0 {
+			label = "hps_led0";
+			gpios = <&portb 24 0>;	/* HPS_GPIO53 */
+			linux,default-trigger = "heartbeat";
+		};
+
+		hps_led1 {
+			label = "hps_led1";
+			gpios = <&portb 25 0>;	/* HPS_GPIO54 */
+			linux,default-trigger = "heartbeat";
+		};
+
+	};
+
+	gpio-keys {
+		compatible = "gpio-keys";
+
+		hps_sw0 {
+			label = "hps_sw0";
+			gpios = <&portc 13 0>;	/* HPS_GPI0 */
+			linux,input-type = <5>;	/* EV_SW */
+			linux,code = <0x0>;	/* SW_LID */
+		};
+
+		hps_sw1 {
+			label = "hps_sw1";
+			gpios = <&portc 14 0>;	/* HPS_GPI1 */
+			linux,input-type = <5>;	/* EV_SW */
+			linux,code = <0x5>;	/* SW_DOCK */
+		};
+
+
+		hps_hkey0 {
+			label = "hps_hkey0";
+			gpios = <&portb 28 0>;	/* HPS_GPIO57 */
+			linux,code = <194>;	/* KEY_F24 */
+		};
+
+	};
+
+	regulator_3_3v: vcc3p3-regulator {
+		compatible = "regulator-fixed";
+		regulator-name = "VCC3P3";
+		regulator-min-microvolt = <3300000>;
+		regulator-max-microvolt = <3300000>;
+	};
+};
+
+&gmac1 {
+	#address-cells = <1>;
+	#size-cells = <0>;
+
+	status = "okay";
+	phy-mode = "rgmii";
+
+	ethernet-phy@1 {
+		reg = <1>;
+		adi,rx-internal-delay-ps = <2000>;
+		adi,tx-internal-delay-ps = <2000>;
+	};
+};
+
+&gpio0 {	/* GPIO 0..29 */
+	status = "okay";
+};
+
+&gpio1 {	/* GPIO 30..57 */
+	status = "okay";
+};
+
+&gpio2 {	/* GPIO 58..66 (HLGPI 0..13 at offset 13) */
+	status = "okay";
+};
+
+&i2c1 {
+	status = "okay";
+};
+
+&mmc0 {
+	vmmc-supply = <&regulator_3_3v>;
+	vqmmc-supply = <&regulator_3_3v>;
+	status = "okay";
+};
+
+&qspi {
+	status = "okay";
+
+	flash: flash@0 {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		compatible = "n25q00";
+		reg = <0>;
+		spi-max-frequency = <100000000>;
+
+		m25p,fast-read;
+		cdns,page-size = <256>;
+		cdns,block-size = <16>;
+		cdns,read-delay = <4>;
+		cdns,tshsl-ns = <50>;
+		cdns,tsd2d-ns = <50>;
+		cdns,tchsh-ns = <4>;
+		cdns,tslch-ns = <4>;
+	};
+};
+
+&usb1 {
+	status = "okay";
+};
